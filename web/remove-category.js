@@ -1,4 +1,4 @@
-const db = require('../repository')
+import db from './repository'
 
 export const route = {
   method: 'delete',
@@ -7,7 +7,7 @@ export const route = {
 };
 
 export default async (req) => {
-  const category = await db.categories().del(req.body.id)
+  const category = await db.categories().del(req.body.category.id)
   return category;
 };
 

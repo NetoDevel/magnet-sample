@@ -1,4 +1,4 @@
-const db = require('../repository')
+import db from './repository'
 
 export const route = {
   method: 'put',
@@ -7,8 +7,8 @@ export const route = {
 };
 
 export default async (req) => {
-  console.log(req.body.id, req.body.name)
-  const category = await db.categories().update(req.body.id, req.body.name)
-  return category;
+  const categoryRequest = req.body.category
+  const categoryResponse = await db.categories().update(categoryRequest.id, categoryRequest.name)
+  return categoryResponse;
 };
 

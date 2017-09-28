@@ -1,7 +1,7 @@
 import test from 'ava'
 const { connection, errorHandler } = require('./setup')
 
-const categories = require('../repository/categories')({ connection, errorHandler })
+const categories = require('../web/repository/categories')({ connection, errorHandler })
 
 const create = () => categories.save('category test')
 

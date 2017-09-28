@@ -1,4 +1,4 @@
-const db = require('../repository')
+import db from './repository'
 
 export const route = {
   method: 'get',
