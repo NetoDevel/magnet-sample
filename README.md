@@ -2,73 +2,85 @@
 simple crud with mysql
 
 # Before
-create databases and tables, verify the file migrations.sql
+create databases and tables, verify the file `migrations.sql`
 
 # Resource categories
 
 ### POST
     url: http://0.0.0.0:3000/category
-    body: 
-        {
-            "category": {
-                "name": "new category"
-            }
+
+```json
+body: 
+    {
+        "category": {
+            "name": "new category"
         }
-    response:
-        {
-            "category": {
-                "name": "asd category",
-                "id": 10
-            }
+    }
+response:
+    {
+        "category": {
+            "name": "new category",
+            "id": 1
         }
+    }
+```
 
 ### PUT
     url: http://0.0.0.0:3000/category
-    body:
-       {
-            "category": {
-                "id": 9,
-                "name": "edit category"
-            }
+    
+```json
+body:
+   {
+        "category": {
+            "id": 1,
+            "name": "edit category"
         }
-    response:
-        {
-            "category": {
-                "name": "edit category",
-                "id": 9
-            },
-            "affectedRows": 1
-        }
+    }
+response:
+    {
+        "category": {
+            "name": "edit category",
+            "id": 1
+        },
+        "affectedRows": 1
+    }
+ ```
 
 ### GET
     url: http://0.0.0.0:3000/category
-    response:
-    {
-        "categories": [
-            {
-                "id": 2,
-                "name": "test"
-            },
-            {
-                "id": 3,
-                "name": "test"
-            }
-        ]
-    }
+
+```json
+response:
+{
+    "categories": [
+        {
+            "id": 1,
+            "name": "new category"
+        },
+        {
+            "id": 2,
+            "name": "other category"
+        }
+    ]
+}
+```
 
 ### DELETE
     url:http://0.0.0.0:3000/category
-    body:
-        {
-            "category": {
-                "id": 9
-            }
+
+```json
+body:
+    {
+        "category": {
+            "id": 1
         }
-    response:
-        {
-            "message": "Category removed successfully!",
-            "affectedRows": 1
-        }
+    }
+response:
+    {
+        "message": "Category removed successfully!",
+        "affectedRows": 1
+    }
+```
 
 ## Tests
 npm run test
