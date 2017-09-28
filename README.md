@@ -22,7 +22,7 @@ response:
             "name": "new category",
             "id": 1
         }
-    }
+    }
 ```
 
 ### PUT
@@ -79,7 +79,7 @@ response:
     {
         "message": "Category removed successfully!",
         "affectedRows": 1
-    }
+    }
 ```
 
 ## Tests
