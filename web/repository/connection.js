@@ -12,10 +12,6 @@ const errorHandler = (error, msg, rejectedFunction) => {
 	rejectedFunction({ error: msg })
 }
 
-const categoryModule = require('./categories')({ connection, errorHandler })
-
-module.exports = {
-  categories: () => categoryModule
-}
+module.exports = { connection, errorHandler }
 
 
